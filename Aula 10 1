@@ -21,7 +21,7 @@ void setup()
 #include <Wire.h>
 //Arduino 2
 void setup()
-}
+{
  Wire.begin(8);
  Wire.onReceive(receiveEvent);
  Serial.begin(9600);
