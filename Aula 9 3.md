@@ -1,8 +1,10 @@
 #include <Adafruit_NeoPixel.h>
 
-const int PIN = 9;
+const int PIN = 10;
 int i;
- Adafruit_NeoPixel strip = Adafruit_NeoPixel(16, PIN, NEO_GRB + NEO_KHZ800);
+int n;
+int x;
+ Adafruit_NeoPixel strip = Adafruit_NeoPixel(47, PIN, NEO_GRB + NEO_KHZ800);
 int color;
 
  void setup() 
@@ -13,28 +15,79 @@ int color;
 
 void loop()
 {
-  varreduraLEDs();
+  AzulLEDs();
+  VerLEDs();
+  RoxoLEDs();
 }
 
-void varreduraLEDs()
-{
-  for (int i=0; i<16 ; i++)
-  {delay(50);
-  strip.setPixelColor(i, 255, 0, 0);
-  strip.show();
-  }
-  delay(800);
+void AzulLEDs()
+{ 
+  for (int x=0; x<=23 ; x++)
   {
-  for (int n=0; n<16 ; n++)
-  {delay(50);
-  strip.setPixelColor(n, 0, 255, 0);
+  strip.setPixelColor(x, 0, 0, 255);
   strip.show();
   }
-  delay(800);
-  for (int x=0; x<16 ; x++)
-  {delay(50);
+  for (int x=0; x<=23 ; x++)
+  {
   strip.setPixelColor(x, 0, 0, 0);
   strip.show();
   }
+}
+void VerLEDs()
+{
+   for (int n=24; n<=39; n++)
+   {
+     strip.setPixelColor(n, 255, 0, 0);
+     strip.show();
+   for (int x=0; x<=23 ; x++)
+  {
+  strip.setPixelColor(x, 0, 0, 255);
+  strip.show();
   }
+   for (int x=0; x<=23 ; x++)
+  {
+  strip.setPixelColor(x, 0, 0, 0);
+  strip.show();
+  }
+   }
+  for (int n=24; n<=39; n++)
+   {
+     strip.setPixelColor(n, 255, 0, 0);
+     strip.show();
+  }
+   
+}
+void RoxoLEDs()
+{
+   for (int i=39; i<=46; i++)
+   {
+     strip.setPixelColor(i, 255, 0, 255);
+     strip.show();
+     
+      for (int n=24; n<=39; n++)
+   {
+     strip.setPixelColor(n, 255, 0, 0);
+     strip.show();
+   for (int x=0; x<=23 ; x++)
+  {
+  strip.setPixelColor(x, 0, 0, 255);
+  strip.show();
+  }
+   for (int x=0; x<=23 ; x++)
+  {
+  strip.setPixelColor(x, 0, 0, 0);
+  strip.show();
+  }
+         for (int n=24; n<=39; n++)
+   {
+     strip.setPixelColor(n, 255, 0, 0);
+     strip.show();
+  }
+   }
+  for (int i=39; i<=46; i++)
+   {
+     strip.setPixelColor(i, 0, 0, 0);
+     strip.show();
+   }
+}
 }
